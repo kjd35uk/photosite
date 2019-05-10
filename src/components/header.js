@@ -16,9 +16,7 @@ const Header = ({ siteTitle }) => (
           to="/"
           className="heading-link"
         >
-        <img alt="" src="./logo.png" width="120" height="120" style={{
-            margin: `0 1rem -15px auto`,
-        }}/>
+        <img className="logo" alt="" src="./logo.png" width="120" height="120"/>
           {siteTitle}
         </Link>
       </h1>

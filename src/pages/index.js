@@ -14,21 +14,32 @@ const IndexPage = ({ data }) => (
     <div className="main-div">
       <div className="album-links">
         <ul className="album-links-list">
+          <li><Link to="/KK-2015">KK 2015</Link></li>
+          <li><Link to="/portugal-2016">Portugal 2016</Link></li>
           <li><Link to="/fujian-2017">Fujian 2017</Link></li>
+          <li><Link to="/luxembourg-2018">Luxembourg 2018</Link></li>
+
           <li><Link to="/margarita-rumble-2019">Margarita Rumble 2019</Link></li>
           <li><Link to="/portraits">Portraits</Link></li>
-          <li><Link to="/malta-2016">Malta 2017</Link></li>
+          <li><Link to="/malta-2017">Malta 2017</Link></li>
           <li><Link to="/manchester">Manchester Street Photography</Link></li>
+          <li><Link to="/50th-party">50th Party</Link></li>
+          <li><Link to="/">Leaving Party</Link></li>
+          <li><Link to="/">travel/events/street/portraits</Link></li>
+
         </ul>
       </div>
-      <div className="album-pics">
+      <div className="album-pics" style={{maxWidth: `50%`, marginLeft: `45%`}}>
         {data.images.edges.map( image => {
           const name = image.node.name
+          const link = name.replace(/_/g, "-")
           const title = name.replace(/_/g, " ").split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
           return(
             <div key={image.node.name}>
               <Img alt="" fluid={image.node.childImageSharp.fluid}/>
-              <p>{title}</p>
+              <div style={{ height: `3rem`, paddingLeft: `1rem`}}>
+                <Link style={{color: `white`, fontFamily: `Roboto Mono`}} to={`/${link}`}>{title}</Link>
+              </div>
             </div>
           )
         })}

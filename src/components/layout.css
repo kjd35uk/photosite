@@ -673,6 +673,11 @@ pre tt:after {
 
 .album-links-list {
   list-style: none;
+  padding-top: 1rem;
+}
+
+.logo {
+  margin: 0 5rem -15px auto;
 }
 
 .header {
