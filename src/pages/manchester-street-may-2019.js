@@ -31,6 +31,7 @@ const Manchester_Street_May_2019 = ({ data }) => (
 export const query = graphql`
 query allManchesterImgs {
   images: allFile(
+    sort: { order: ASC, fields: [absolutePath] }
     filter: { relativePath: { regex: "/manchester/.*.JPG/" } }
     ) {
       edges{

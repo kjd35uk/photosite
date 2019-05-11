@@ -31,6 +31,7 @@ const Luxembourg_2018 = ({ data }) => (
 export const query = graphql`
 query allLuxembourgImgs {
   images: allFile(
+    sort: { order: ASC, fields: [absolutePath] }
     filter: { relativePath: { regex: "/luxembourg/.*.JPG/" } }
     ) {
       edges{

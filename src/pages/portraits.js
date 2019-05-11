@@ -31,7 +31,7 @@ const Portraits = ({ data }) => (
 export const query = graphql`
 query allPortraitImgs {
   images: allFile(
-    filter: { relativePath: { regex: "/portraits/.*.JPG/" } }
+    filter: { relativePath: { regex: "/portraits/.*./" } }
     ) {
       edges{
         node{

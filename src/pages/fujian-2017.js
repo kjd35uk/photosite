@@ -31,6 +31,7 @@ const Fujian = ({ data }) => (
 export const query = graphql`
 query allImgs {
   images: allFile(
+    sort: { order: ASC, fields: [absolutePath] }
     filter: { relativePath: { regex: "/fujian/.*./" } }
     ) {
       edges{

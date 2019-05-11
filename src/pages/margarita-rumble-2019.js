@@ -31,6 +31,7 @@ const MargaritaRumble = ({ data }) => (
 export const query = graphql`
 query allMargaritaImgs {
   images: allFile(
+    sort: { order: ASC, fields: [absolutePath] }
     filter: { relativePath: { regex: "/margarita/.*.JPG/" } }
     ) {
       edges{

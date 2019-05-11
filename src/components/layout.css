@@ -676,7 +676,18 @@ pre tt:after {
   padding-top: 1rem;
 }
 
+.album-links-list-item {
+  font-size: 1rem;
+  margin-left: 2rem;
+}
+
+.album-links-list-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
 .logo {
+
   margin: 0 5rem -15px auto;
 }
 

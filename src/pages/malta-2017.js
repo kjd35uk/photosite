@@ -31,6 +31,7 @@ const Malta = ({ data }) => (
 export const query = graphql`
 query allMaltaImgs {
   images: allFile(
+    sort: { order: ASC, fields: [absolutePath] }
     filter: { relativePath: { regex: "/malta/.*.jpg/" } }
     ) {
       edges{

@@ -31,6 +31,7 @@ const Kyrgyzstan_And_Kazakhstan_2016 = ({ data }) => (
 export const query = graphql`
 query allKyrgyzstanAndKazakhstanImgs {
   images: allFile(
+    sort: { order: ASC, fields: [absolutePath] }
     filter: { relativePath: { regex: "/KKs/.*.JPG/" } }
     ) {
       edges{
