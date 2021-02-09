@@ -1,0 +1,89 @@
+.header {
+  background-color: whitesmoke;
+  margin-bottom: 1.45rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.heading-link {
+  color: #400080 ;
+  font-family: Roboto Mono;
+  font-size: 40px;
+  font-stretch: expanded;
+  text-decoration: none;
+  width: 100%;
+}
+
+.logo {
+  margin: 0 5rem -15px auto;
+}
+
+.titleContainer {
+  background-color: #ecddfa;
+  margin: 0;
+  padding: 0 10px 15px 5px;
+}
+
+.title {
+  font-size: 34px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.headerStripe {
+  background-color: #ff7b14;
+  height: 0.2rem; 
+  margin-bottom: 2rem;
+}
+
+/* All mobiles */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 100%;
+  }
+
+  .heading-link {
+    font-size: 20px;
+  }
+ 
+  .logo {
+    height: 55px;
+    margin: 0;
+    width: 55px;
+  } 
+
+  .titleContainer {
+    padding: 0 5px;
+  }
+
+  .title {
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .headerStripe {
+    height: 0.2rem; 
+  }
+}
+
+/* small mobile only */
+@media screen and (max-width: 320px) {
+  .logo {
+    height: 40px;
+    margin: 0;
+    width: 40px;
+  } 
+
+  .title {
+    font-size: 17px;
+    padding: 5px 0;
+  }
+
+  .titleContainer {
+    padding: 0;
+  }
+}

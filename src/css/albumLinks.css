@@ -1,0 +1,46 @@
+.album-links {
+  display: flex;
+  font-family: Roboto Mono; 
+  font-size: 24px;
+  float: left;
+  max-width: 35%;
+  margin-bottom: 1.45rem;
+  margin-top: 2rem;
+}
+
+.album-links-list {
+  list-style: none;
+}
+
+.album-links-list-item {
+  font-size: 1rem;
+  margin-left: 2rem;
+}
+
+.album-links-list-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.album-name-link {
+  font-size: 22px;
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 100%;
+  }
+
+  .album-links-list-item {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+  .album-links-list-title {
+    font-size: 16px;
+  }
+
+  .album-name-link {
+    font-size: 16px;
+  }
+}

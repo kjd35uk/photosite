@@ -1,0 +1,93 @@
+.albumContainer {
+  background-color: whitesmoke;
+  max-width: 1800px;
+  margin-bottom: 1.45rem;
+  padding: 10px;
+}
+
+.album-pics-home { 
+  background-color: black;
+  margin-bottom: 1.45rem;
+  padding-bottom: 0.4rem;
+  max-width: 50%; 
+  margin-left: 40%;
+}
+
+
+.album-pics { 
+  background-color: black;
+  margin-bottom: 1.45rem;
+  padding-bottom: 0.4rem;
+  max-width: 50%; 
+  margin-left: 40%;
+}
+
+.album-name {
+  color: black;
+  font-family: Roboto Mono; 
+  font-size: 24px;
+  float: left;
+  max-width: 35%;
+  margin-bottom: 1.45rem;
+  margin-left: 5px;
+  padding-top: 3rem;
+}
+
+.albumTitleContainer {
+  height: 3rem; 
+  padding-left: 1rem
+}
+
+/* All mobiles and ipad*/
+@media screen and (max-width: 1024px) {
+
+  .albumContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .album-name {
+    max-width: 100%;
+    margin-left: 5px;
+  }
+}
+
+/* All mobiles and ipad*/
+@media screen and (max-width: 1024px) {
+
+  .album-pics {
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+
+
+/* All mobiles */
+@media screen and (max-width: 480px) {
+
+  .album-pics {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .album-pics-home {
+    max-width: 58%;
+  }
+
+  .album-name {
+    font-size: 18px;
+    margin-top: 0;
+    max-width: 100%;
+    padding-left: 5px;
+    padding-top: 0;
+  }
+}
+
+
+/* small mobile only */
+@media screen and (max-width: 320px) {
+  .album-name {
+    font-size: 16px;
+  }
+}

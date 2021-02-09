@@ -626,86 +626,26 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-@media only screen and (max-width: 480px) {
+
+.mainContainer {
+  margin: 0 auto;
+  margin-top: 185px;
+  max-width: 1400;
+  padding-top: 0;
+}
+
+/* All mobiles */
+@media screen and (max-width: 480px) {
   html {
     font-size: 100%;
   }
-}
-/* ********* */
 
-.main-div {
-  background-color: whitesmoke;
-  max-width: 1800px;
-  margin-bottom: 1.45rem;
-  padding: 10px;
-}
+  ul {
+    margin-left: 5px;
+  }
 
-.album-name {
-  color: #400080 ;
-  font-family: Roboto Mono; 
-  font-size: 24px;
-  float: left;
-  max-width: 35%;
-  margin-bottom: 1.45rem;
-  margin-top: 10rem;
-  padding-top: 1rem;
-}
-
-.album-pics { 
-  background-color: black;
-  margin-bottom: 1.45rem;
-  margin-left: 35%;
-  max-width: 65%;
-  padding-bottom: 0.4rem;
-  padding-top: 12rem;
-}
-
-.album-links {
-  display: flex;
-  font-family: Roboto Mono; 
-  font-size: 24px;
-  float: left;
-  max-width: 35%;
-  margin-bottom: 1.45rem;
-  margin-top: 10rem;
-}
-
-
-.album-links-list {
-  list-style: none;
-  padding-top: 1rem;
-}
-
-.album-links-list-item {
-  font-size: 1rem;
-  margin-left: 2rem;
-}
-
-.album-links-list-title {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.logo {
-
-  margin: 0 5rem -15px auto;
-}
-
-.header {
-  background-color: whitesmoke;
-  margin-bottom: 1.45rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.heading-link {
-  color: #400080 ;
-  font-family: Roboto Mono;
-  font-size: 40px;
-  font-stretch: expanded;
-  /* text-align: center; */
-  text-decoration: none;
-  width: 100%;
+  .mainContainer {
+    margin-top: 135px;
+    padding: 0;
+  }
 }

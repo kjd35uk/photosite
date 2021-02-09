@@ -1,0 +1,20 @@
+.albumTitle {
+  font-size: 18px;
+}
+
+ .albumTitleContainer {
+    padding-left: 10px;
+  }
+
+  .albumTitleLink {
+    color: white;
+    font-family: 'Roboto Mono';
+  }
+
+/* All mobiles */
+@media screen and (max-width: 480px) {
+
+  .albumTitle {
+   font-size: 12px;
+  }
+}

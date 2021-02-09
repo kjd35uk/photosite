@@ -1,31 +1,9 @@
-import React from "react";
-import { Link } from "gatsby";
-import Img from 'gatsby-image'
+import React from 'react'
 import { graphql } from 'gatsby'
+import Page from '../components/page'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
-const Kyrgyzstan_And_Kazakhstan_2016 = ({ data }) => (
-  <Layout>
-    <SEO title="Kyrgyzstan And Kazakhstan 2016 Black and White Protography" />
-    <div className="main-div">
-      <div className="album-name">Kyrgyzstan And Kazakhstan 2016</div>
-        <div className="album-pics">
-          {data.images.edges.map( image => {
-            const name = image.node.name
-            const title = name.replace(/_/g, " ").split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
-            return(
-              <div key={image.node.name}>
-                <Img alt="" fluid={image.node.childImageSharp.fluid}/>
-                <p>{title}</p>
-              </div>
-            )
-          })}
-        </div>
-    </div>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
+const KyrgyzstanAndKazakhstan2016 = ({ data }) => (
+  <Page data={data} albumName='Kyrgyzstan And Kazakhstan 2016' seoTitle='Kyrgyzstan And Kazakhstan Black And White Travel Photography' />
 )
 
 export const query = graphql`
@@ -47,6 +25,6 @@ query allKyrgyzstanAndKazakhstanImgs {
       }
   }
 }
-`;
+`
 
-export default Kyrgyzstan_And_Kazakhstan_2016
+export default KyrgyzstanAndKazakhstan2016
