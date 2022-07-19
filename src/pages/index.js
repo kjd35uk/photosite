@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 
 
 import Layout from "../components/layout"
@@ -34,37 +34,34 @@ const IndexPage = ({ data }) => (
           const name = image.node.name
           const link = name.replace(/_/g, "-")
           const title = name.replace(/_/g, " ").split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
-          return(
+          return (
             <div key={image.node.name}>
-              <Img alt="" fluid={image.node.childImageSharp.fluid}/>
+              <GatsbyImage image={image.node.childImageSharp.gatsbyImageData} alt="" />
               <div style={{ height: `3rem`, paddingLeft: `1rem`}}>
                 <Link style={{color: `white`, fontFamily: `Roboto Mono`}} to={`/${link}`}>{title}</Link>
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </div>
   </Layout>
 )
 
-export const query = graphql`
-query allCoverImgs {
+export const query = graphql`query allCoverImgs {
   images: allFile(
-    sort: { order: ASC, fields: [absolutePath] }
-    filter: { relativePath: { regex: "/coverphotos/.*.jpg/" } }
-    ) {
-      edges{
-        node{
-          relativePath
-          name
-          childImageSharp {
-            fluid(maxWidth: 4000, maxHeight: 2700, quality:90) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+    sort: {order: ASC, fields: [absolutePath]}
+    filter: {relativePath: {regex: "/coverphotos/.*.jpg/"}}
+  ) {
+    edges {
+      node {
+        relativePath
+        name
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
       }
+    }
   }
 }
 `;
