@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
@@ -15,12 +15,12 @@ const MargaritaRumble = ({ data }) => (
           {data.images.edges.map( image => {
             const name = image.node.name
             const title = name.replace(/_/g, " ").split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
-            return(
+            return (
               <div key={image.node.name}>
-                <Img alt="" fluid={image.node.childImageSharp.fluid}/>
+                <GatsbyImage image={image.node.childImageSharp.gatsbyImageData} alt="" />
                 <p>{title}</p>
               </div>
-            )
+            );
           })}
         </div>
     </div>
@@ -28,23 +28,20 @@ const MargaritaRumble = ({ data }) => (
   </Layout>
 )
 
-export const query = graphql`
-query allMargaritaImgs {
+export const query = graphql`query allMargaritaImgs {
   images: allFile(
-    sort: { order: ASC, fields: [absolutePath] }
-    filter: { relativePath: { regex: "/margarita/.*.JPG/" } }
-    ) {
-      edges{
-        node{
-          relativePath
-          name
-          childImageSharp {
-            fluid(maxWidth: 4000, maxHeight: 2700, quality:90) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+    sort: {order: ASC, fields: [absolutePath]}
+    filter: {relativePath: {regex: "/margarita/.*.JPG/"}}
+  ) {
+    edges {
+      node {
+        relativePath
+        name
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
       }
+    }
   }
 }
 `;
